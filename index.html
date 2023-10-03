@@ -4,11 +4,17 @@
     <title>User Agent Viewer</title>
 </head>
 <body>
+
     <p id="user-agent-info"></p>
 
     <script>
-        // JavaScript code to display the user agent
-        document.getElementById("user-agent-info").innerText = navigator.userAgent;
+        // JavaScript code to get user agent and convert to JSON
+        var userAgent = navigator.userAgent;
+        var userAgentJSON = { "userAgent": userAgent };
+        var userAgentStringJSON = JSON.stringify(userAgentJSON);
+
+        // Display the JSON-formatted user agent
+        document.getElementById("user-agent-info").innerText = userAgentStringJSON;
     </script>
 </body>
 </html>
