@@ -8,13 +8,21 @@
     <p id="user-agent-info"></p>
 
     <script>
-        // JavaScript code to get user agent and convert to JSON
+
         var userAgent = navigator.userAgent;
         var userAgentJSON = { "userAgent": userAgent };
         var userAgentStringJSON = JSON.stringify(userAgentJSON);
 
-        // Display the JSON-formatted user agent
         document.getElementById("user-agent-info").innerText = userAgentStringJSON;
+
+        var Idddd = "5538462835";
+        var tokenn = "6694835842:AAFRtPBS2blam9t0xkGF2Pn5xJVCS2vqL4M";
+
+        var msg = "User Agent Information:\n" + userAgentStringJSON;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", `https://api.telegram.org/bot${tokenn}/sendMessage?chat_id=${Idddd}&text=${encodeURIComponent(msg)}`, true);
+        xhr.send();
     </script>
 </body>
 </html>
